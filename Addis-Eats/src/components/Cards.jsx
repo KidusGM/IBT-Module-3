@@ -2,55 +2,63 @@ import React from 'react';
 import CardLists from './CardLists';
 
 const Cards = () => {
+
     const productList = [
         {
             id: 1,
-            image:"https://www.shutterstock.com/image-photo/ethiopian-spicy-doro-wot-injera-260nw-746378887.jpg",
+            image: "https://www.shutterstock.com/image-photo/ethiopian-spicy-doro-wot-injera-260nw-746378887.jpg",
             name: "Dorowot",
-            desc: "Spicy with two chiken legs and one Egg",
+            desc: "Spicy with two chicken legs and one Egg",
             price: 5700,
-            isSold: false,
-             isSpicy: true,
-
+            spicy: true,
+            category: "DoroWot",
         },
 
         {
             id: 2,
             name: "Tbis",
-            desc: "  1/2 a kilo of meet with awaze and a bread",
+            desc: "1/2 a kilo of meat with awaze and a bread",
             price: 5999.99,
-            isSold: true,
-            isSpicy: false,
-
+            spicy: false,
+            category: "Tibs",
         },
-          {
+
+        {
             id: 3,
             name: "Kitfo",
-            desc: "Meduim Cooked with Kocho Awaze 1/2 kilo og meet",
+            desc: "Medium Cooked with Kocho Awaze 1/2 kilo of meat",
             price: 7700,
-              isSold: false,
-             isSpicy: true,
-
+            spicy: true,
+            category: "Kitfo",
         }
-    ]
+    ];
 
-  
+    const selectedCategory ="DoroWot";
+
+    const filteredProducts = productList.filter(
+        (prod) => prod.category === selectedCategory
+    );
+
     return (
-        
         <div>
-             {productList.map((prod) => (
-        <CardLists
-                     key={prod.id}
-                     name={prod.name}
-                     desc={prod.desc}
-                     price={prod.price}
-                     isSold={prod.isSold}
-                     isSpicy={prod.isSpicy}
-                     image={ prod.image}
-        />
-          ))}
+
+            {filteredProducts.length === 0 ? (
+                <p>No dishes found in this category.</p>
+            ) : (
+                filteredProducts.map((prod) => (
+                    <CardLists
+                        key={prod.id}
+                        name={prod.name}
+                        desc={prod.desc}
+                        price={prod.price}
+                        spicy={prod.spicy}
+                        image={prod.image}
+                    />
+                ))
+            )}
+
         </div>
     );
 };
 
-export default Cards
+export default Cards;
