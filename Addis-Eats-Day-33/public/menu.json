@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "image": "https://www.shutterstock.com/image-photo/ethiopian-spicy-doro-wot-injera-260nw-746378887.jpg",
+    "name": "Dorowot",
+    "desc": "Spicy with two chicken legs and one Egg",
+    "price": 5700,
+    "spicy": true,
+    "category": "DoroWot"
+  },
+  {
+    "id": 2,
+    "image": "",
+    "name": "Kitfo",
+    "desc": "Medium Cooked with Kocho Awaze 1/2 kilo of meat",
+    "price": 5999.99,
+    "spicy": false,
+    "category": "Kitfo"
+  },
+  {
+    "id": 3,
+    "image": "",
+    "name": "Tibs",
+    "desc": "1/2 a kilo of meat with awaze and a bread",
+    "price": 7700,
+    "spicy": true,
+    "category": "Tibs"
+  }
+]
